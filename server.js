@@ -1,11 +1,18 @@
+//Install express server
 const express = require('express');
+const path = require('path');
+
 const app = express();
 
-app.use(express.static(__dirname + '/dist'));
+// Serve only the static files form the dist directory
+
+app.use(express.static(__dirname + '/dist/github-followers'));
 
 app.all('*', (req, res) => {
-    res.status(200).sendFile(__direname + '/dist/inex.html');
+    res.status(200).sendFile(__direname + '/dist/github-followers/index.html');
 
 });
 
+
+// Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
