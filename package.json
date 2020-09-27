@@ -6,8 +6,8 @@
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
-    "lint": "./node_modules/.bin/tslint -p tslint.json",
-    "heroku-postbuild": "ng build --prod",
+    "lint": "ng lint",
+    "postinstall": "ng build --aot --prod",
     "e2e": "ng e2e"
   },
   "private": true,
